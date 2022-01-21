@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: On assign
+
+# Controls when the workflow will run
+on:
+  issues:
+    types:
+     - assigned
+    
+
+jobs:
+  add-comment:
+    if: contains(github.event.issue.assignees.*.login == 'JHackenberg-Mazars')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Issue wurde aufgenommen und weitergeleitet. Warte auf Zeitschätzung und Bestätigung.
