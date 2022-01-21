@@ -11,7 +11,7 @@ on:
 
 jobs:
   add-comment:
-    if: contains(github.event.issue.assignees.*.login == 'JHackenberg-Mazars')
+    if: contains(github.event.issue.assignees.*.login, 'JHackenberg-Mazars')
     runs-on: ubuntu-latest
     permissions:
       issues: write
