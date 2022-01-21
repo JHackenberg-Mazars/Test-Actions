@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build src/action.js -o dist"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/JHackenberg-Mazars/Test-Actions/issues"
   },
-  "homepage": "https://github.com/JHackenberg-Mazars/Test-Actions#readme"
+  "homepage": "https://github.com/JHackenberg-Mazars/Test-Actions#readme",
+  "dependencies": {
+    "@vercel/ncc": "^0.33.1"
+  }
 }
